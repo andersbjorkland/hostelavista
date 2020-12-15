@@ -1,8 +1,18 @@
 import styled from 'styled-components';
 
+
+const displayWidthTrigger = 400;
+const menuHeight = 1.6;
+const menuWidth = 2;
+
+export const Trigger = styled.div`
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+`;
 export const Wrapper = styled.div`
-  --height: 1.6rem;
-  --width: 2rem;
+  --height: ${menuHeight}rem;
+  --width: ${menuWidth}rem;
   
   display: flex;
   flex-direction: column;
@@ -31,14 +41,14 @@ export const Wrapper = styled.div`
     div {
       &:nth-child(1) {
         transform: rotate(45deg);
-        width: ${1.6/Math.sin(45)}rem;
+        width: ${menuHeight/Math.sin(45)}rem;
       }
       &:nth-child(2) {
         transform: scaleX(0);
       }
       &:nth-child(3) {
         transform: rotate(-45deg);
-        width: ${1.6/Math.sin(45)}rem;
+        width: ${menuHeight/Math.sin(45)}rem;
       }
     }
   }

@@ -1,15 +1,22 @@
-import {Wrapper} from "./HamburgerIcon.styles";
+import {Trigger, Wrapper} from "./HamburgerIcon.styles";
 import {useState} from "react"
 
-export const HamburgerIcon = () => {
-    const [active, setActive] = useState(true);
+
+
+export const HamburgerIcon = (props) => {
+    const [active, setActive] = useState(false);
 
     return (
-        <Wrapper onClick={() => setActive(!active)} className={active ? "active" :""}>
-            <div/>
-            <div/>
-            <div/>
-        </Wrapper>
+        <Trigger>
+            <Wrapper onClick={() => {
+                props.clickHandler();
+                setActive(!active);
+            }} className={active ? "active" :""}>
+                <div/>
+                <div/>
+                <div/>
+            </Wrapper>
+        </Trigger>
     );
 }
 

@@ -4,7 +4,7 @@ import diagonalDivide from '../../images/diagonal-divide.svg';
 export const Wrapper = styled.div`
   background: var(--blue);
   
-  height: 6rem;
+  height: var(--headerHeight);
   padding: 0 2rem;
   
   font-size: 1.2rem;
@@ -40,6 +40,7 @@ export const Content = styled.div`
 
 export const Navbar = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 1rem;
 
   a, p {

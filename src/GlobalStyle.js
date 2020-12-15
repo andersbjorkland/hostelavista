@@ -14,6 +14,9 @@ export const GlobalStyle = createGlobalStyle`
     
     // Dimensions
     --maxWidth: 1200px;
+    --headerHeight: 6rem;
+    
+    --mediumScreenWidth: 800px;
   }
 
   * {
