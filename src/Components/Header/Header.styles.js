@@ -11,7 +11,13 @@ export const Wrapper = styled.div`
   background-image: url(${diagonalDivide});
   background-position: right;
   background-repeat: no-repeat;
-  background-size: 60% 100%;
+  background-size: 45% 100%;
+  
+  transition: 0.5s;
+  
+  @media screen and (min-width: 800px) {
+    background-size: 70% 100%;
+  }
   
   
   a, p {

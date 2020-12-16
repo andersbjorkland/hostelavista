@@ -3,12 +3,16 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
+    gap: 1rem;
   
     @media screen and (max-width: 800px) {
       position: absolute;
       top: var(--headerHeight);
       right: 2rem;
-      
+      background-color: white;
+      width: 14rem;
+      padding: 1rem;
+
       flex-direction: column;
       &.hide {
         display: none;
