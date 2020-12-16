@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import {Content, Navbar, Wrapper} from "./Header.styles";
 import Logo from "../Logo";
 import Link from "./Link";
-import HamburgerIcon from "../HamburgerIcon";
-import HamburgerMenu from "../HamburgerMenu";
+import HamburgerIcon from "./HamburgerIcon";
+import HamburgerMenu from "./HamburgerMenu";
 
 
 

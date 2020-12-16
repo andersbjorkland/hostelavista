@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     // Dimensions
     --maxWidth: 1200px;
     --headerHeight: 6rem;
+    --heroHeight: 30rem;
     
     --mediumScreenWidth: 800px;
   }
