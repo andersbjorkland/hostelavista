@@ -41,28 +41,102 @@ export const AnimatedRow = styled.div`
   justify-content: center;
   
   overflow-x: hidden;
+  position: relative;
   
   >* {
     position: relative;
-    left: -80%;
-    animation: appear 4s ease-in-out infinite;
+    visibility: visible;
+    width: 10rem;
+    --adjust-width: 6rem;
     
-    @keyframes appear {
-      0%{
-        left: -80%;
-      }
-      
-      20% {
-        left: 0%;
-      }
-      
-      80% {
-        left: 0%;
-      }
-      100%{
-        left: 120%;
+    z-index: 25;
+
+    &:nth-child(1) {
+      animation: appear-1 12s ease-in-out infinite;
+
+      @keyframes appear-1 {
+        0%{
+          left: calc(-80% + var(--adjust-width));
+        }
+
+        10%{
+          left: calc(0% + var(--adjust-width));
+        }
+
+        20% {
+          left: calc(0% + var(--adjust-width));
+        }
+
+        33%{
+          left: calc(120% + var(--adjust-width));
+        }
+        
+        100%{
+          left: calc(120% + 7.5rem);
+        }
       }
     }
+    &:nth-child(2) {
+      animation: appear-2 12s ease-in-out infinite;
+      
+      @keyframes appear-2 {
+        0%{
+          left: -80%;
+        }
+
+        33%{
+          left: -80%;
+        }
+
+        43% {
+          left: 0;
+        }
+
+        53%{
+          left: 0;
+        }
+        
+        66% {
+          left: 120%;
+        }
+        
+        100% {
+          left: 120%;
+        }
+      }
+    }
+    
+    &:nth-child(3) {
+      animation: appear-3 12s ease-in-out infinite;
+
+      @keyframes appear-3 {
+        0% {
+          left: calc(-80% - var(--adjust-width));
+        }
+
+        66% {
+          left: calc(-80% - var(--adjust-width));
+        }
+
+        76% {
+          left: calc(0% - var(--adjust-width));
+        }
+
+        86% {
+          left: calc(0% - var(--adjust-width));
+        }
+
+        99% {
+          left: calc(120% - var(--adjust-width));
+        }
+
+        100% {
+          left: calc(120% - var(--adjust-width));
+        }
+      }
+    }
+    
+    
   }
 `;
 
