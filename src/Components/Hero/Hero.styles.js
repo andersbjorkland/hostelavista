@@ -43,11 +43,14 @@ export const AnimatedRow = styled.div`
   overflow-x: hidden;
   position: relative;
   
+  //min-width: 30rem;
+  
   >* {
+    margin:0;
     position: relative;
     visibility: visible;
-    width: 10rem;
-    --adjust-width: 6rem;
+    width: 8rem;
+    --adjust-width: 8rem;
     
     z-index: 25;
 
@@ -56,22 +59,27 @@ export const AnimatedRow = styled.div`
 
       @keyframes appear-1 {
         0%{
+          //left: calc(-80% + var(--adjust-width));
           left: calc(-80% + var(--adjust-width));
         }
 
         10%{
+          //left: calc(0% + var(--adjust-width));
           left: calc(0% + var(--adjust-width));
         }
 
         20% {
+          //left: calc(0% + var(--adjust-width));
           left: calc(0% + var(--adjust-width));
         }
 
         33%{
+          //left: calc(120% + var(--adjust-width));
           left: calc(120% + var(--adjust-width));
         }
         
         100%{
+          //left: calc(120% + 7.5rem);
           left: calc(120% + 7.5rem);
         }
       }
