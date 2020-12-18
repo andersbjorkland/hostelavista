@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     --headerHeight: 6rem;
     --heroHeight: 30rem;
     
+    --cardWidth: 15rem;
+    
     --mediumScreenWidth: 800px;
   }
 

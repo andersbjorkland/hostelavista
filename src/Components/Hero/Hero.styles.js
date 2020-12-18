@@ -25,6 +25,7 @@ export const Overlay = styled.div`
 
 export const Content = styled.div`
   max-width: var(--maxWidth);
+  overflow-x: hidden;
   margin: auto;
   height: var(--heroHeight);
   
