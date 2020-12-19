@@ -31,6 +31,10 @@ export const Carousel = styled.div`
   width: 100%;
   height: fit-content;
   
+  @media screen and (min-width: 800px) {
+    gap: 1rem;
+  }
+  
   &>* {
     transition: 0.8s;
     position: relative;

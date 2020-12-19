@@ -50,7 +50,7 @@ export const Navbar = styled.div`
   gap: 1rem;
 
   a, p {
-    color: var(--blue);
+    color: var(--purple);
     text-decoration: none;
   }
 `;

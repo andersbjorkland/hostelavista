@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     // Dimensions
     --maxWidth: 1200px;
     --headerHeight: 6rem;
-    --heroHeight: 30rem;
+    --heroHeight: 35rem;
     
     --cardWidth: 15rem;
     

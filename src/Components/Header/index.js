@@ -7,13 +7,12 @@ import HamburgerMenu from "./HamburgerMenu";
 
 
 
-const Header = ({display}) => {
+const Header = () => {
 
     const [showMenu, setShowMenu] = useState(false);
 
     const hamburgerClickHandler = () => {
         setShowMenu(!showMenu);
-        console.log("Clicked!");
     }
 
     return (
