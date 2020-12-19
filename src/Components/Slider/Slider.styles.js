@@ -44,7 +44,7 @@ export const Carousel = styled.div`
     }
   }
   
-  &.animate-l >* {
+  &.animate-r >* {
     transition: 0.7s;
     animation: shiftL ease-in 0.8s forwards;
     
@@ -63,7 +63,7 @@ export const Carousel = styled.div`
     }
   }
 
-  &.animate-r >* {
+  &.animate-l >* {
     transition: 0.7s;
     animation: shiftR ease-in 0.8s forwards;
 

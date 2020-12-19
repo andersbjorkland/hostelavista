@@ -9,5 +9,14 @@ export const Wrapper = styled.div`
   height: 20rem;
   transition: 0.4s;
   
-  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--darkBlue);
+  background-color: rgba(255, 255, 255, 0.85);
+  
+  img {
+    margin: 1rem 0;
+  }
+  
+  p {
+    align-self: flex-start;
+  }
 `;
