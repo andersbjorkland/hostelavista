@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   padding: 1rem;
   width: var(--cardWidth);
   min-width: var(--cardWidth);
-  height: 20rem;
+  height: 22rem;
   transition: 0.4s;
   
   color: var(--darkBlue);
@@ -14,9 +14,15 @@ export const Wrapper = styled.div`
   
   img {
     margin: 1rem 0;
+    border-radius: 0.2rem;
+  }
+  
+  .flex-row {
+    margin-bottom: 0.6rem;
   }
   
   p {
     align-self: flex-start;
+    text-align: left;
   }
 `;

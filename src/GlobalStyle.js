@@ -47,6 +47,17 @@ export const GlobalStyle = createGlobalStyle`
   .yellow {
     color: var(--yellow);
   }
+  
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.3rem;
+    
+    &>.fa-container {
+      width: 1.2rem;
+    }
+  }
 
 
 `;

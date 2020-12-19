@@ -1,7 +1,9 @@
 import {Wrapper} from "./Card.styles";
 
-export const Card = (props) => (
+const Card = (props) => (
     <Wrapper>
         {props.children}
     </Wrapper>
-)
+);
+
+export default Card;
