@@ -11,7 +11,8 @@ export const Wrapper = styled.div`
       top: var(--headerHeight);
       right: 0;
       background-color: white;
-      width: 14rem;
+      width: 100%;
+      box-shadow: 0 4px 4px rgba(155, 155, 155, 0.1);
       padding: 1rem;
 
       flex-direction: column;
