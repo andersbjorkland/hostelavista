@@ -12,6 +12,10 @@ export const Wrapper = styled.div`
   color: var(--darkBlue);
   background-color: rgba(255, 255, 255, 0.85);
   
+  h2, h3, h4, p {
+    color: var(--darkBlue);
+  }
+  
   img {
     margin: 1rem 0;
     border-radius: 0.2rem;

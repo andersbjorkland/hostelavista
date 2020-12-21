@@ -38,7 +38,6 @@ export const Carousel = styled.div`
   &>* {
     transition: 0.8s;
     position: relative;
-    //left: calc(3 * var(--cardWidth)/-2 );
     
     &:nth-child(1), &:nth-child(5) {
       opacity: 0.2;
@@ -50,7 +49,7 @@ export const Carousel = styled.div`
   
   &.animate-r >* {
     transition: 0.7s;
-    animation: shiftL ease-in 0.8s forwards;
+    animation: shiftL ease-in-out 0.8s forwards;
     
     @keyframes shiftL {
       0% {
@@ -69,7 +68,7 @@ export const Carousel = styled.div`
 
   &.animate-l >* {
     transition: 0.7s;
-    animation: shiftR ease-in 0.8s forwards;
+    animation: shiftR ease-in-out 0.8s forwards;
 
     @keyframes shiftR {
       0% {
