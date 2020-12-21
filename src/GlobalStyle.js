@@ -50,6 +50,10 @@ export const GlobalStyle = createGlobalStyle`
   .yellow {
     color: var(--yellow);
   }
+  
+  .fill-blue {
+    fill: var(--blue);
+  }
 
   .flex-row {
     display: flex;
