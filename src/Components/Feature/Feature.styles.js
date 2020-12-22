@@ -32,6 +32,8 @@ export const InfoGrid = styled.div`
 
 export const Switcher = styled.div`
   position: relative;
+  min-height: 20rem;
+  background-color: var(--lightBeige);
 `;
 
 
@@ -60,6 +62,8 @@ export const Arrow = styled.div`
     background-color: var(--lightBeige);
     background-image: url(${map});
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     transform: rotate(0deg);
     left: 0;
     top: 0;
@@ -80,6 +84,7 @@ export const Indicator = styled.div`
 `;
 
 export const FlexMix = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;

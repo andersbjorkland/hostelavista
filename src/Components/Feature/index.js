@@ -10,15 +10,38 @@ import {
 import {Arrow, FlexMix, Indicator, InfoGrid, Switcher, Wrapper} from "./Feature.styles";
 import mountain from "../../images/mountain/mountain-1-md.jpeg";
 import {Image} from "../Image.styles";
-import {useState} from "react";
+import {useState, useEffect} from "react";
+
 
 const Feature = () => {
 
     const [indicatorIsActive, setIndicatorIsActive] = useState(false);
+    const [lodging, setLodging] = useState(
+        {
+            tagline: "fishing, skiing, mountaineering are a few of the activities close by. live the nature from this cabin",
+            image: {mountain}
+        }
+    );
 
     const indicatorClick = () => {
         setIndicatorIsActive(!indicatorIsActive);
     }
+
+    useEffect(() => {
+        fetch("https://localhost:8000/api/lodges?page=1")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    const lodge = result["hydra:member"][0];
+                    setLodging(
+                        {
+                            tagline: lodge.tagline,
+                            image: lodge.images[0].path
+                        }
+                    )
+                }
+            )
+    }, []);
 
     return (
         <Wrapper>
@@ -32,12 +55,12 @@ const Feature = () => {
                 <Indicator onClick={indicatorClick} className={indicatorIsActive ? "active" : ""}>
                     <FontAwesomeIcon icon={faMapMarkerAlt}/>
                 </Indicator>
-                <Image src={mountain} alt=""/>
+                <Image src={lodging.image} alt=""/>
             </Switcher>
 
             <FlexMix>
                 <div className="flex-row">
-                    <p>fishing, skiing, mountaineering are a few of the activities close by. live the nature from this cabin</p>
+                    <p>{lodging.tagline}</p>
                 </div>
 
                 <InfoGrid>
