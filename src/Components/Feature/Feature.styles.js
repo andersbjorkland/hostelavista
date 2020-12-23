@@ -23,17 +23,24 @@ export const Wrapper = styled.div`
 `;
 
 export const InfoGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 1.2rem 7rem);
-  gap: 0.3rem;
-  justify-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
   
+  &>div{
+      display: grid;
+      grid-template-columns: 1.2rem 7rem;
+      gap: 0.3rem;
+      justify-items: flex-start;
+  }
 `;
 
 export const Switcher = styled.div`
   position: relative;
-  min-height: 20rem;
   background-color: var(--lightBeige);
+`;
+
+export const ImagePlaceholder = styled.div`
+  min-height: 20rem;
 `;
 
 
@@ -89,13 +96,10 @@ export const FlexMix = styled.div`
   flex-direction: column;
   gap: 1rem;
   
-  @media screen and (min-width: 800px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+`;
 
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 0.5rem;
-  }
+export const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 `;

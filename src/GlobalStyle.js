@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     --darkYellow: #a4991c;
     --beige: #e7cdb6;
     --lightBeige: #fce1c7;
+    --white: white;
 
     // Dimensions
     --maxWidth: 1200px;

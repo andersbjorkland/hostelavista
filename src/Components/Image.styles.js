@@ -5,4 +5,5 @@ export const Image = styled.img`
   height: auto;
   width: auto;
   max-width: 100%;
+  max-height: 75vh;
 `;
