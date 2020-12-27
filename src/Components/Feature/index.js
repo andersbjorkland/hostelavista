@@ -72,12 +72,18 @@ const Feature = () => {
                             </div>
                         );
                     });
-                    setLodging(
-                        {
-                            tagline: lodge.tagline,
-                            image: lodge.images[0]
+
+                    const parsedLodge = {
+                        tagline: lodge.tagline,
+                        image: lodge.images[0],
+                        location: {
+                            address: lodge.address.street + ", " + lodge.address.zipcode + ", " + lodge.address.country,
+                            lat: parseInt(lodge.latitude),
+                            lng: parseInt(lodge.longitude)
                         }
-                    );
+                    };
+
+                    setLodging(parsedLodge);
                     setInfoGrid(
                         <InfoGrid>
                             <div>
@@ -92,16 +98,16 @@ const Feature = () => {
                     setFeaturedImage(<Image id="featured-image" src={lodge.images[0].path} alt={lodge.images[0].alt} />);
 
                     setIsLoading(false);
+                    setTimeout(() => setMapHeight(parsedLodge), 1000);
                 }
-            ).then(() => {
-                setTimeout(setMapHeight, 1000);
-            });
+            )
 
     }, []);
 
-    const setMapHeight = () => {
+    const setMapHeight = (parsedLodge) => {
         const imageElement = document.getElementById("featured-image");
-        setMap(<Map height={imageElement.offsetHeight + "px"}/>);
+        const location = parsedLodge.location;
+        setMap(<Map height={imageElement.offsetHeight + "px"} location={location}/>);
     }
 
 

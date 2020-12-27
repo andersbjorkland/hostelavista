@@ -13,7 +13,7 @@ const Map = ({location = defaultLocation, zoomLevel = 8, height="20rem"}) => {
         <Wrapper height={height}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: process.env.REACT_APP_APIKEY}}
-                defaultCenter={defaultLocation}
+                defaultCenter={location}
                 defaultZoom={zoomLevel}
             >
                 <LocationPin
