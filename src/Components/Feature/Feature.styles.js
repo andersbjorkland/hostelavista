@@ -37,6 +37,7 @@ export const InfoGrid = styled.div`
 export const Switcher = styled.div`
   position: relative;
   background-color: var(--lightBeige);
+  width: 100%;
 `;
 
 export const ImagePlaceholder = styled.div`
@@ -46,6 +47,8 @@ export const ImagePlaceholder = styled.div`
 
 const arrowWidth = 40;
 export const Arrow = styled.div`
+  z-index: 20;
+        
   width: 0;
   height: 0;
   
@@ -79,6 +82,7 @@ export const Arrow = styled.div`
 `;
 
 export const Indicator = styled.div`
+  z-index: 20;
   color: var(--blue);
   position: absolute;
   left: 8px;

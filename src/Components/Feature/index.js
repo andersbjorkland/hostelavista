@@ -13,6 +13,7 @@ import mountain from "../../images/mountain/mountain-1-md.jpeg";
 import {Image} from "../Image.styles";
 import {useState, useEffect} from "react";
 import Button from "../Button";
+import Map from "../Map";
 
 
 const Feature = () => {
@@ -30,12 +31,15 @@ const Feature = () => {
     }
     const [indicatorIsActive, setIndicatorIsActive] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [featuredImage, setFeaturedImage] = useState(<ImagePlaceholder/>);
     const [lodging, setLodging] = useState(
         {
             tagline: "",
             image: {mountain}
         }
     );
+    const [map, setMap] = useState(null);
+
     const [infoGrid, setInfoGrid] = useState(
         <InfoGrid>
             <div className="fa-container"><FontAwesomeIcon icon={faBed}/></div><p>4 bed</p>
@@ -85,10 +89,21 @@ const Feature = () => {
                             {featureDivs}
                         </InfoGrid>
                     );
+                    setFeaturedImage(<Image id="featured-image" src={lodge.images[0].path} alt={lodge.images[0].alt} />);
+
                     setIsLoading(false);
                 }
-            )
+            ).then(() => {
+                setTimeout(setMapHeight, 1000);
+            });
+
     }, []);
+
+    const setMapHeight = () => {
+        const imageElement = document.getElementById("featured-image");
+        setMap(<Map height={imageElement.offsetHeight + "px"}/>);
+    }
+
 
     return (
         <Wrapper>
@@ -97,14 +112,23 @@ const Feature = () => {
                 <p>within 30km</p>
             </div>
 
-            <Switcher>
-                <Arrow onClick={indicatorClick} className={indicatorIsActive ? "active" : ""} />
-                <Indicator onClick={indicatorClick} className={indicatorIsActive ? "active" : ""}>
-                    <FontAwesomeIcon icon={faMapMarkerAlt}/>
-                </Indicator>
-                {isLoading ? <ImagePlaceholder/> : <Image src={lodging.image.path} alt={lodging.image.alt}/>}
-            </Switcher>
-
+            { indicatorIsActive ? (
+                <Switcher>
+                    <Arrow onClick={indicatorClick}  />
+                    <Indicator onClick={indicatorClick} className={indicatorIsActive ? "active" : ""}>
+                        <FontAwesomeIcon icon={faMapMarkerAlt}/>
+                    </Indicator>
+                    { map }
+                </Switcher>
+                ) : (
+                <Switcher>
+                    <Arrow onClick={indicatorClick}  />
+                    <Indicator onClick={indicatorClick} className={indicatorIsActive ? "active" : ""}>
+                        <FontAwesomeIcon icon={faMapMarkerAlt}/>
+                    </Indicator>
+                    { featuredImage }
+                </Switcher>
+                )}
             <FlexMix>
                 <div className="flex-row">
                     <p>{lodging.tagline}</p>

@@ -8,6 +8,7 @@ import triangle from "./images/triangle.svg";
 import triangleBlue from "./images/triangle-blue.svg";
 import Feature from "./Components/Feature";
 import Caller from "./Components/Caller";
+import Map from "./Components/Map";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
             <Feature />
             <Separator className="downer" image={triangleBlue} />
             <Caller />
+            <Map />
         </div>
     );
 }
