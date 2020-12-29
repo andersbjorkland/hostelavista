@@ -1,26 +1,50 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {GlobalStyle} from "./GlobalStyle";
-import Header from "./Components/Header";
-import Hero from "./Components/Hero";
-import Separator from "./Components/Separator";
-import triangle from "./images/triangle.svg";
-import triangleBlue from "./images/triangle-blue.svg";
-import Feature from "./Components/Feature";
-import Caller from "./Components/Caller";
+import { NavLink, Route, Switch} from "react-router-dom";
+import {Content, Navbar, Wrapper} from "./Components/NavControls/Header.styles";
+import Logo from "./Components/Logo";
+import HamburgerIcon from "./Components/NavControls/HamburgerIcon";
+import HamburgerMenu from "./Components/NavControls/HamburgerMenu";
+import Hosting from "./Pages/Hosting";
+import Home from "./Pages/Home";
 
 function App() {
+
+    const [showMenu, setShowMenu] = useState(false);
+
+    const hamburgerClickHandler = () => {
+        setShowMenu(!showMenu);
+    }
+
     return (
-        <div className="App">
+
+        <>
             <GlobalStyle />
-            <Header display={Window} />
-            <Hero />
-            <Separator className="topper" image={triangle} />
-            <Feature />
-            <Separator className="downer" image={triangleBlue} />
-            <Caller />
-        </div>
-    );
+            <Wrapper>
+                <Content>
+                    <Logo />
+                    <Navbar>
+                        <HamburgerIcon clickHandler={hamburgerClickHandler}/>
+                        <HamburgerMenu className={showMenu ? "show" : "hide"}>
+                            <NavLink to="/" exact={true} activeClassName="active">home</NavLink>
+                            <NavLink to="/hosting" activeClassName="active">become a host</NavLink>
+                        </HamburgerMenu>
+                    </Navbar>
+                </Content>
+
+            </Wrapper>
+
+            <Switch>
+                <Route path="/hosting">
+                    <Hosting />
+                </Route>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+            </Switch>
+        </>
+    )
 }
 
 export default App;

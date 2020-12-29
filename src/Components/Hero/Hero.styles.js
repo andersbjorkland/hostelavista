@@ -33,6 +33,10 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   
+  h1 {
+    text-align: center;
+  }
+  
   color: var(--blue);
 `;
 

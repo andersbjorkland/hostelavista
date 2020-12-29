@@ -66,6 +66,10 @@ export const GlobalStyle = createGlobalStyle`
       width: 1.2rem;
     }
   }
+  
+  a.active {
+    color: var(--red);
+  }
 
 
 `;

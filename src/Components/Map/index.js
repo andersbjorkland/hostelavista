@@ -8,9 +8,9 @@ const defaultLocation = {
     lng: -122.08427,
 }
 
-const Map = ({location = defaultLocation, zoomLevel = 8, height="20rem"}) => {
+const Map = ({location = defaultLocation, zoomLevel = 8, height="20rem", width="100%"}) => {
     return (
-        <Wrapper height={height}>
+        <Wrapper height={height} width={width}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: process.env.REACT_APP_APIKEY}}
                 defaultCenter={location}

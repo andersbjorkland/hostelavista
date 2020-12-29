@@ -5,12 +5,14 @@ const height = 30;
 
 
 export const Wrapper = styled.div`
+  align-self: center;
   position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   height: ${height}rem;
   width: 100%;
+  max-width: 48rem;
   overflow-x: hidden;
   
   gap: 2rem;

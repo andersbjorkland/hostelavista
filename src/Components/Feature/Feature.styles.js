@@ -36,7 +36,6 @@ export const InfoGrid = styled.div`
 
 export const Switcher = styled.div`
   position: relative;
-  background-color: var(--lightBeige);
   width: 100%;
 `;
 

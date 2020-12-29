@@ -107,7 +107,11 @@ const Feature = () => {
     const setMapHeight = (parsedLodge) => {
         const imageElement = document.getElementById("featured-image");
         const location = parsedLodge.location;
-        setMap(<Map height={imageElement.offsetHeight + "px"} location={location}/>);
+        if (imageElement) {
+            setMap(<Map height={imageElement.offsetHeight + "px"} width={imageElement.offsetWidth + "px"} location={location}/>);
+        } else {
+            setMap(<Map location={location}/>);
+        }
     }
 
 
