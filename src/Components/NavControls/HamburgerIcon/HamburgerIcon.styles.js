@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 
-const displayWidthTrigger = 400;
 const menuHeight = 1.6;
 const menuWidth = 2;
 
