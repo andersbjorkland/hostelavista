@@ -8,6 +8,7 @@ import HamburgerIcon from "./Components/NavControls/HamburgerIcon";
 import HamburgerMenu from "./Components/NavControls/HamburgerMenu";
 import Hosting from "./Pages/Hosting";
 import Home from "./Pages/Home";
+import Details from "./Pages/Details";
 
 function App() {
 
@@ -38,6 +39,9 @@ function App() {
             <Switch>
                 <Route path="/hosting">
                     <Hosting />
+                </Route>
+                <Route path="/details/:id">
+                    <Details />
                 </Route>
                 <Route exact path="/">
                     <Home />

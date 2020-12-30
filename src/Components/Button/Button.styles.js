@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
-export const LinkButton = styled.a`
+export const LinkButton = styled.div`
   width: fit-content;
   margin-top: auto;
   align-self: flex-start;
   font-size: 0.9rem;
-  text-decoration: none;
+  
+  a {
+    text-decoration: none;
+  }
 
   div {
     display: flex;

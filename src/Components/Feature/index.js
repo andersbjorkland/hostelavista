@@ -14,6 +14,7 @@ import {Image} from "../Image.styles";
 import {useState, useEffect} from "react";
 import Button from "../Button";
 import Map from "../Map";
+import {Link} from "react-router-dom";
 
 
 const Feature = () => {
@@ -27,13 +28,13 @@ const Feature = () => {
         faUtensils: faUtensils,
         faWifi: faWifi,
         faBell: faBell
-
     }
     const [indicatorIsActive, setIndicatorIsActive] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [featuredImage, setFeaturedImage] = useState(<ImagePlaceholder/>);
     const [lodging, setLodging] = useState(
         {
+            id: -1,
             tagline: "",
             image: {mountain}
         }
@@ -73,7 +74,9 @@ const Feature = () => {
                         );
                     });
 
+                    console.log(lodge);
                     const parsedLodge = {
+                        id: lodge.id,
                         tagline: lodge.tagline,
                         image: lodge.images[0],
                         location: {
@@ -147,7 +150,7 @@ const Feature = () => {
                 {!isLoading && infoGrid}
             </FlexMix>
             <FlexRow>
-                <Button outlined={true}>Read more</Button>
+                <Button outlined={true}><Link to={"/details/" + lodging.id}>Read more</Link></Button>
                 <Button>Book now</Button>
             </FlexRow>
         </Wrapper>
